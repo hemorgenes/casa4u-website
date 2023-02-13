@@ -1,0 +1,30 @@
+.featured {
+  padding: var(--padding-section);
+  padding-right: 4rem;
+  padding-left: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+}
+
+@media (max-width: 767px) {
+  .featured {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    gap: 2.5rem;
+  }
+}
+
+.box_featured {
+  color: var(--dark);
+}
+
+.box_featured p {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 767px) {
+  .featured {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

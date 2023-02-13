@@ -1,0 +1,54 @@
+.concept {
+  background-color: var(--primary);
+  margin: 0 auto;
+  position: relative;
+  padding: 3rem;
+  width: 90%;
+  z-index: 1;
+  margin-top: 550px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.concept h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--dark);
+}
+
+.button_box {
+  display: flex;
+  justify-content: center;
+}
+
+.button_box > button {
+  background-color: var(--dark);
+  color: var(--secondary);
+  border: 2px solid var(--dark);
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button_box > button:hover {
+  filter: brightness(0.85);
+  letter-spacing: 2px;
+  background-color: transparent;
+  color: var(--dark);
+}
+
+@media screen and (max-width: 767px) {
+  .concept h1 {
+    font-size: 1.2rem;
+  }
+
+  .concept {
+    margin-top: 850px;
+  }
+}
