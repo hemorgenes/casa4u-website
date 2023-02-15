@@ -38,7 +38,7 @@ export default function Step() {
     <div className={style.step}>
       <div>
         <Image
-          src="/img/img-step.png"
+          src="/img/img-step.webp"
           width={575}
           height={710}
           alt="Imagem ilustrativa"
