@@ -79,7 +79,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={style.footer_terms}>
-        <p>Copyright &copy; 2022 Casa4u</p>
+        <p>Copyright &copy; {new Date().getFullYear()} Casa4u</p>
         <p>Termos e condições - Política de privacidade</p>
       </div>
     </footer>

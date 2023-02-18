@@ -34,7 +34,7 @@ export default function Slide() {
       title: "Agradável e Autêntico",
       srcImg: "/img/slide-3.webp",
       description:
-        "Agrade a você e as suas visitas com lavabo bem decorado e autêntico",
+        "Agrade você e as suas visitas com lavabo bem decorado e autêntico",
     },
   ];
 
