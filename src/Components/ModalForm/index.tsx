@@ -346,7 +346,7 @@ function ModalForm() {
 
               <ReCAPTCHA
                 size="normal"
-                sitekey={`${process.env.RECAPTCHA_SITE_KEY}`}
+                sitekey={`6LcXVJwkAAAAAEpEtVO-w9g9sFoao7sMzgd52zXy`}
                 onChange={handleValueRecaptcha}
                 onExpired={() => setValueRecaptcha(null)}
               />
