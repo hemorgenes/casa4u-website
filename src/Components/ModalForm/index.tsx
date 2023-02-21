@@ -159,10 +159,13 @@ function ModalForm() {
         });
         setIsMoreThanOnePlace(false);
       })
-      .catch(() =>
+      .catch((err) =>{
+        setIsLoading(false)
+          console.log(err)
         alert(
-          "Houve algum erro interno, entre em contato com o suporte técnico da Casa4U"
+          "Houve algum erro interno. Entre em contato com o suporte técnico da Casa4U"
         )
+      }
       );
   };
 
