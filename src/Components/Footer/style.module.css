@@ -65,11 +65,11 @@
 @media screen and (max-width: 767px) {
   .footer_item {
     grid-template-columns: 1fr;
-    gap: 0rem;
+    gap: 2rem;
   }
 
   .footer_item > div:nth-child(2) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .footer_terms {
@@ -79,7 +79,7 @@
   .footer h2,
   .footer h4,
   .footer p {
-    text-align: center;
+    text-align: left;
   }
 
   .footer_item > div:nth-child(1) {

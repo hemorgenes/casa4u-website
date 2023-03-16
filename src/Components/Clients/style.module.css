@@ -1,10 +1,10 @@
 .clients{
-  background-color: var(--dark);
+  background: linear-gradient(141.13deg, #000000 -30.55%, #3E3E3E 77.69%);
   height: 700px;
   position: absolute;
   width: 100%;
   left: 0;
-  padding: 8rem 2rem 0rem 2rem;
+  padding: 4rem 2rem 0rem 2rem;
 }
 
 
@@ -12,6 +12,7 @@
   max-width: 1366px;
   margin: 0 auto;
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
@@ -23,7 +24,7 @@
 .clients_section > div:nth-child(1) h1{
   font-weight: 400;
   font-size: 3rem;
-  letter-spacing: .12em;
+  margin-bottom: 2rem;
 }
 
 .clients_section > div:nth-child(1) p{

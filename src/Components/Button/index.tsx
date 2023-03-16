@@ -5,7 +5,7 @@ import { useModalForm } from "../../contexts/ModalFormContext";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
-  icon: string;
+  icon?: string;
 }
 
 export default function Button(props: ButtonProps) {
@@ -22,12 +22,14 @@ export default function Button(props: ButtonProps) {
     >
       {text}
       &nbsp;
-      <Image
-        src={`/img/${icon}.svg`}
-        width={24}
-        height={24}
-        alt={`Ícone ${icon}`}
-      />
+      {icon && (
+        <Image
+          src={`/img/${icon}.svg`}
+          width={24}
+          height={24}
+          alt={`Ícone ${icon}`}
+        />
+      )}
     </button>
   );
 }

@@ -1,5 +1,8 @@
 .section_projects {
   padding: 0rem 4rem;
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 @media (max-width: 767px) {
@@ -8,16 +11,10 @@
   }
 }
 
-
-.section_projects > h1 {
-  font-weight: 400;
-  font-size: 3rem;
-  color: var(--dark);
-}
-
 .projects {
   display: flex;
   gap: 1rem;
+  position: relative;
 }
 
 .project {
@@ -28,7 +25,7 @@
   cursor: pointer;
   position: relative;
   flex: 0;
-  transition: all 0.7s ease-in-out;
+  transition: all 0.4s ease-out;
 }
 
 .project.active {
@@ -70,11 +67,8 @@
     flex-direction: column;
   }
 
-  .section_projects > h1 {
-    font-size: 2rem;
-  }
-
   .project {
+    position: relative;
     flex: none;
     height: 10vh;
   }
@@ -84,15 +78,10 @@
     height: 30vh;
   }
 
-  .project h2 {
-    font-size: 1.2rem;
-  }
-
   .project.active::before {
     background: linear-gradient(180deg, #1e1e1e 0%, rgba(30, 30, 30, 0) 85%);
   }
 
-  .project h2,
   .project button {
     margin: 0.8rem;
   }

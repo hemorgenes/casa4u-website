@@ -7,7 +7,6 @@ export default function Footer() {
       <div className={style.footer_item}>
         <div>
           <div>
-            <img src="/img/logo.svg" alt="Logo Casa4U" />
             <h2>CASA4U</h2>
           </div>
           <p>
@@ -26,15 +25,15 @@ export default function Footer() {
             <h4>
               <u>Navegação</u>
             </h4>
-            <Link href="#home">
+            <Link href="/">
               <a>Ínicio</a>
             </Link>
             <Link href="#featured">
               <a>Serviços</a>
             </Link>
 
-            <Link href="#products">
-              <a>Produtos</a>
+            <Link href="#projects">
+              <a>Ambientes</a>
             </Link>
 
             <Link href="#testimoni">
@@ -63,17 +62,14 @@ export default function Footer() {
             <h4>
               <u>Redes sociais</u>
             </h4>
-            <Link href="https://www.instagram.com/casa4u_oficial/">
+            <Link href="https://www.instagram.com/casa4u_/">
               <a target="_blank">Instagram</a>
             </Link>
             <Link href="https://twitter.com/Casa4u_oficial">
               <a target="_blank">Twitter</a>
             </Link>
-            <Link href="https://api.whatsapp.com/send/?phone=5511979588987">
+            <Link href="https://api.whatsapp.com/send/?phone=5511953804114">
               <a target="_blank">Whatsapp</a>
-            </Link>
-            <Link href="https://www.linkedin.com/company/casa4u/">
-              <a target="_blank">Linkedin</a>
             </Link>
           </div>
         </div>

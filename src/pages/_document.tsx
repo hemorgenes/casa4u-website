@@ -1,9 +1,11 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { CssBaseline } from "@nextui-org/react";
 
 export default function Document() {
   return (
     <Html lang="pt-BR">
       <Head>
+        {CssBaseline.flush()}
         <link rel="icon" type="image/png" href="/img/miniature.png" />
         <meta property="og:image" content="/thumb.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,7 +13,7 @@ export default function Document() {
         <link
           href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
           rel="stylesheet"
-        />  
+        />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://www.nettracker.com.br/" />
         <meta property="twitter:title" content="Casa4u - Móveis Planejados" />

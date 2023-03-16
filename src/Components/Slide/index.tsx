@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // import required modules
-import { Autoplay, EffectFade, Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import Image from "next/image";
 
 export default function Slide() {
@@ -42,7 +42,7 @@ export default function Slide() {
     <div className={style.containerSlide}>
       <Swiper
         spaceBetween={30}
-        effect={"fade"}
+        effect={"slide"}
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,
@@ -51,7 +51,7 @@ export default function Slide() {
         pagination={{
           clickable: false,
         }}
-        modules={[EffectFade, Pagination, Autoplay]}
+        modules={[Pagination, Autoplay]}
         className="mySwiper"
         id="my-styles-swiper"
       >
@@ -63,12 +63,16 @@ export default function Slide() {
                 <div className={`${style.content}`}>
                   <h2>{slide.title}</h2>
                   <span>{slide.description}</span>
-                  <Button text="Entrar em contato" icon="Send" />
+                  <Button text="Entrar em contato" />
                 </div>
                 <Image
+                  blurDataURL={slide.srcImg}
+                  placeholder="blur"
                   className="img-slide"
                   layout="fill"
                   objectFit="cover"
+                  priority
+               
                   src={slide.srcImg}
                   alt={slide.title}
                 />

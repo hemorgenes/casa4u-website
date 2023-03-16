@@ -1,119 +1,89 @@
-import style from "./style.module.css";
+import { Navbar, Link, Text } from "@nextui-org/react";
 import Image from "next/image";
-import { useState } from "react";
-import OutsideClickHandler from "react-outside-click-handler";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { FiTwitter, FiLinkedin } from "react-icons/fi";
-import { BsWhatsapp } from "react-icons/bs";
-import Link from "next/link";
+import { FaWhatsappSquare } from "react-icons/fa";
+import { useModalForm } from "../../contexts/ModalFormContext";
 
-export default function Navbar() {
-  const [offCanvas, setOffCanvas] = useState(false);
+export default function NavbarComponent() {
+  const collapseItems = [
+    {
+      text: "Whatsapp",
+      href: "https://api.whatsapp.com/send?phone=5511953804114",
+      color: "success",
+    },
+    {
+      text: "Facebook",
+      href: "https://www.facebook.com/people/Casa-4U-M%C3%B3veis-Planejados/100090892625224/",
+      color: "primary",
+    },
+    {
+      text: "Instagram",
+      href: "https://www.linkedin.com/company/casa4u_",
+      color: "secondary",
+    },
+  ];
+
+  const setModalIsOpen = useModalForm((state) => state.setModalIsOpen);
 
   return (
-    <header>
-      <nav id="nav" className={style.nav}>
-        <Link href="/">
-          <a className="casa4u">Casa4u</a>
-        </Link>
-        <Image src="/img/logo.svg" width={32} height={32} alt="Logo Casa4u" />
-        <OutsideClickHandler onOutsideClick={() => setOffCanvas(false)}>
-          <Image
-            src="/img/menu.svg"
-            width={32}
-            height={32}
-            style={{ cursor: "pointer" }}
-            onClick={() => setOffCanvas(true)}
-            alt="ícone de menu"
-          />
-        </OutsideClickHandler>
-      </nav>
-      <div className={`${style.canvas_menu} ${offCanvas ? style.active : ""} `}>
-        <div className={style.close_icon}>
-          <Image
-            src="/img/close.svg"
-            width={32}
-            height={32}
-            onClick={() => setOffCanvas(false)}
-            alt="Ícone de fechar o menu"
-          />
-        </div>
-        <div className={style.canvas_content}>
-          <div className={style.social}>
-            <h4>Redes sociais</h4>
+    <header className="md:px-16 px-4 py-3">
+      <Navbar id="navbar" variant="static">
+        <Image
+          src={"/img/logo.svg"}
+          width={130}
+          height={60}
+          alt="Logo casa4u"
+        />
+        <Navbar.Brand
+          css={{
+            "@xs": {
+              w: "12%",
+            },
+          }}
+        >
+          <Navbar.Toggle showIn="xs" />
+        </Navbar.Brand>
+        <Navbar.Content activeColor="neutral" hideIn="xs">
+          <Navbar.Link color={"text"} href="#">
+            Inicio
+          </Navbar.Link>
+          <Navbar.Link color={"text"} href="#projects">
+            Ambientes
+          </Navbar.Link>
+          <Navbar.Link color={"text"} href="#testimoni">
+            Depoimentos
+          </Navbar.Link>
+          <Navbar.Link color={"text"} href="/">
+            <button onClick={() => setModalIsOpen(true)}>Contato</button>
+          </Navbar.Link>
+          <Navbar.Link
+            color={"text"}
+            href="https://api.whatsapp.com/send?phone=5511953804114"
+            target={"_blank"}
+          >
+            <FaWhatsappSquare size={30} color="#16d696" />
+          </Navbar.Link>
+        </Navbar.Content>
 
-            <div>
-              <Link href="https://www.instagram.com/casa4u_oficial/">
-                <a target="_blank">
-                  <p>
-                    <AiOutlineInstagram
-                      width={32}
-                      style={{ color: "#E1BF44" }}
-                    />
-                    <span>&nbsp; Instagram</span>
-                  </p>
-                </a>
-              </Link>
-              <Link href="https://twitter.com/Casa4u_oficial">
-                <a target="_blank">
-                  <p>
-                    <FiTwitter width={32} style={{ color: "#E1BF44" }} />
-                    <span>&nbsp; Twitter</span>
-                  </p>
-                </a>
-              </Link>
-
-              <Link href="https://www.linkedin.com/company/casa4u/">
-                <a target="_blank">
-                  <p>
-                    <FiLinkedin width={32} style={{ color: "#E1BF44" }} />
-                    <span>&nbsp; Linkedin</span>
-                  </p>
-                </a>
-              </Link>
-              <Link href="https://api.whatsapp.com/send/?phone=5511979588987">
-                <a target="_blank">
-                  <p>
-                    <BsWhatsapp width={32} style={{ color: "#E1BF44" }} />
-                    <span>&nbsp; Whatsapp</span>
-                  </p>
-                </a>
-              </Link>
-            </div>
-          </div>
-
-          <div className={style.menu}>
-            <h4>Menu</h4>
-            <p style={{ marginTop: 0 }}>
-              <a href="#home" onClick={() => setOffCanvas(false)}>
-                Ínicio
-              </a>
-            </p>
-            <p>
-              <a href="#featured" onClick={() => setOffCanvas(false)}>
-                Serviços
-              </a>
-            </p>
-            <p>
-              <a href="#projects" onClick={() => setOffCanvas(false)}>
-                Projetos
-              </a>
-            </p>
-            <p>
-              <a href="#testimoni" onClick={() => setOffCanvas(false)}>
-                Depoimentos
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div className={style.email}>
-          <p>Entre em contato</p>
-          <h2>
-            <u>contato@casa4u.com.br</u>
+        <Navbar.Collapse>
+          <h2 className="text-xl mb-4 font-semibold text-gray-800">
+            Redes sociais
           </h2>
-        </div>
-      </div>
+          {collapseItems.map((item, index) => (
+            <Navbar.CollapseItem key={item.text} activeColor="neutral">
+              <Link
+                color="inherit"
+                css={{
+                  minWidth: "100%",
+                }}
+                href={item.href}
+                target="_blank"
+              >
+                <span className="text-gray-500">{item.text}</span>
+              </Link>
+            </Navbar.CollapseItem>
+          ))}
+        </Navbar.Collapse>
+      </Navbar>
     </header>
   );
 }

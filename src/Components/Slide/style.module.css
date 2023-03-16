@@ -1,11 +1,12 @@
 .containerSlide {
-  padding: 8rem 0rem 0rem 0rem;
+  padding: 0rem 0rem 0rem 0rem;
+  margin: 0 auto;
 }
 
 .itemSlide {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 75vh;
 }
 
 .itemSlide .overlay {
@@ -24,18 +25,24 @@
 .itemSlide .content {
   position: absolute;
   display: flex;
-  width: 100%;
-  top: 40%;
-  left: 4rem;
   flex-direction: column;
-
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 2;
   color: #fff;
+  text-align: center;
 }
 
 .itemSlide .content h2 {
+  text-transform: uppercase;
+  font-weight: bolder;
   margin-bottom: 1.5rem;
   line-height: 0px;
+  font-size: 24px;
+  font-weight: bold;
   font-family: Helvetica, sans-serif;
   letter-spacing: 2px;
 }
@@ -43,7 +50,8 @@
 .itemSlide .content span {
   display: inline-block;
   margin-bottom: 1rem;
-  color: #bbbbbb;
+  letter-spacing: 1px;
+  color: #ffffff;
 }
 
 .itemSlide .content button {
@@ -54,7 +62,6 @@
   font-weight: bold;
   text-transform: uppercase;
   border: none;
-  filter: invert(100%);
 }
 
 .itemSlide .content button:hover {
@@ -65,7 +72,10 @@
 }
 
 @media (max-width: 767px) {
+
+
   .itemSlide .content {
+    padding: 2rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

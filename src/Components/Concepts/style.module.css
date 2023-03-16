@@ -1,5 +1,5 @@
 .concept {
-  background-color: var(--primary);
+  background-color: #fff;
   margin: 0 auto;
   position: relative;
   padding: 3rem;
@@ -9,13 +9,21 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
+    0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
+    0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
+    0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035),
+    0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
+    0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
 }
 
 .concept h1 {
-  font-size: 3rem;
+  font-size: 2rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.06em;
-  color: var(--dark);
+  color: #000;
 }
 
 .button_box {
@@ -24,8 +32,8 @@
 }
 
 .button_box > button {
-  background-color: var(--dark);
-  color: var(--secondary);
+  background: linear-gradient(141.13deg, #000000 -30.55%, #3e3e3e 77.69%);
+  color: #fff;
   border: 2px solid var(--dark);
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
@@ -39,8 +47,8 @@
 .button_box > button:hover {
   filter: brightness(0.85);
   letter-spacing: 2px;
-  background-color: transparent;
-  color: var(--dark);
+  background: transparent;
+  color: #000;
 }
 
 @media screen and (max-width: 767px) {

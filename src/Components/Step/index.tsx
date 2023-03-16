@@ -1,5 +1,7 @@
 import style from "./style.module.css";
+const Fade = require("react-reveal/Fade");
 import Image from "next/image";
+
 import { useState } from "react";
 import Button from "../Button";
 
@@ -36,28 +38,33 @@ export default function Step() {
 
   return (
     <div className={style.step}>
+      <Fade left duration={700} distance="100px">
+        <div>
+          <Image
+            src="/img/img-step.webp"
+            width={575}
+            height={710}
+            objectFit="cover"
+            alt="Imagem ilustrativa"
+          />
+        </div>
+      </Fade>
       <div>
-        <Image
-          src="/img/img-step.webp"
-          width={575}
-          height={710}
-          alt="Imagem ilustrativa"
-        />
-      </div>
-      <div>
-        <h1 style={{ margin: "0" }}>
-          Simples <u>etapas,</u>
-          <br />
-          Grandes <u>Mudanças</u>
-        </h1>
-        <p>
-          A Casa <b>for you (4U)</b> foi concebida a para atender as mais
-          variadas necessidades. Está claro para nós que a elegância e
-          sofisticação devem ser trata como prioridade para nossos clientes. Não
-          é apenas uma questão de vender serviço e produto, nossa proposta vai
-          muito além disso. Cremos que vender uma vez é fácil, difícil é fazer
-          parte da vida das pessoas de forma positiva.
-        </p>
+        <Fade bottom duration={700} distance="100px">
+          <h1 style={{ margin: "0" }}>
+            Simples <u>etapas,</u>
+            <br />
+            Grandes <u>Mudanças</u>
+          </h1>
+        </Fade>
+        <Fade bottom duration={700} distance="50px" delay="100">
+          <p>
+            Tudo acontece dentro do lar: nos quartos os sonhos ganham vida, na
+            cozinha damos corpo as emoções, histórias são feitas nas salas. Com
+            a nossa cara e o nosso estilo, o nosso lar é onde cada milímetro diz
+            que a gente é por completo. Confira as etapas desse procedimento:
+          </p>
+        </Fade>
         <div className={style.box_steps}>
           {appState.objects.map((item: any, key: any) => (
             <div

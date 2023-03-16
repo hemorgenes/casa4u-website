@@ -1,73 +1,81 @@
 import style from "./style.module.css";
-import Button from "../Button";
-import { useState } from "react";
+const Fade = require("react-reveal/Fade");
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-type ObjectProps = {
-  id: number;
-  image: string;
-  text: string;
-};
+// import required modules
+import { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
 
-type AppStateProps = {
-  activeObject: ObjectProps | null;
-  objects: ObjectProps[];
-};
 
 export default function Projects() {
-  const [appState, changeState] = useState<AppStateProps>({
-    activeObject: null,
-    objects: [
-      {
-        id: 1,
-        image: "project-1.webp",
-        text: "Cozinha",
-      },
-      {
-        id: 2,
-        image: "project-2.webp",
-        text: "Reunião",
-      },
-      {
-        id: 3,
-        image: "project-3.webp",
-        text: "Office",
-      },
-      {
-        id: 4,
-        image: "project-4.webp",
-        text: "Armário",
-      },
-    ],
-  });
-
-  function toggleActive(key: number) {
-    changeState({ ...appState, activeObject: appState.objects[key] });
-  }
-
-  const [firstItemActive, setFirstItemActive] = useState(true);
+  const slides = [
+    {
+      id: 1,
+      title: "Sofisticação e Qualidade",
+      srcImg: "/img/slide-1.webp",
+      description: "Oferecemos um ótimo design e uma estrutra impecável",
+    },
+    {
+      id: 2,
+      title: "Conforto e Bem-estar",
+      srcImg: "/img/slide-2.webp",
+      description:
+        "Transforme sua sala em um lugar que transmita energias boas",
+    },
+    {
+      id: 3,
+      title: "Agradável e Autêntico",
+      srcImg: "/img/slide-3.webp",
+      description:
+        "Agrade você e as suas visitas com lavabo bem decorado e autêntico",
+    },
+  ];
 
   return (
     <div className={style.section_projects} id="projects">
-      <h1>
-        <u>Projetos</u>
-      </h1>
-      <div className={style.projects}>
-        {appState.objects.map((item: ObjectProps, key: number) => (
-          <div
-            className={`${style.project} ${
-              appState.objects[key] == appState.activeObject ? style.active : ""
-            } ${key == 0 ? `${firstItemActive ? style.active : ""}` : ""}`}
-            style={{ backgroundImage: `url(/img/${item.image})` }}
-            key={key}
-            onClick={() => {
-              toggleActive(key);
-              setFirstItemActive(false);
-            }}
-          >
-            <h2>{item.text}</h2>
-            <Button icon="Send" />
-          </div>
-        ))}
+      <Fade bottom duration={700} distance="50px">
+        <h1 className="text-xl -tracking-tighter md:text-3xl text-center pb-10 pt-10 md:pt-14 md:pb-14">
+          AMBIENTES
+        </h1>
+      </Fade>
+      <div>
+        <Swiper
+          spaceBetween={30}
+          effect={"slide"}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          pagination={{
+            clickable: false,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+          id="my-styles-swiper"
+        >
+          {slides.map((slide) => {
+            return (
+              <SwiperSlide key={slide.id} className=" mb-10">
+                <div className={`h-[300px] w-full`}>
+                  <Image
+                    blurDataURL={slide.srcImg}
+                    placeholder="blur"
+                    className="img-slide"
+                    layout="fill"
+                    objectFit="cover"
+                    src={slide.srcImg}
+                    alt={slide.title}
+                  />
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
     </div>
   );

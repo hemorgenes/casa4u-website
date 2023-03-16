@@ -206,7 +206,7 @@ function ModalForm() {
               {/* NAME */}
               <div className={styles.input}>
                 <label htmlFor="nome">
-                  Nome <p style={{ color: "red" }}>*</p>
+                  Nome da empresa <p style={{ color: "red" }}>*</p>
                 </label>
                 <input id="nome" {...register("name")} required type="text" />
               </div>
@@ -342,7 +342,7 @@ function ModalForm() {
               {/* IDEA */}
               <div className={styles.input}>
                 <label htmlFor="ideia">
-                  Me conte suas ideias <p style={{ color: "red" }}>*</p>
+                  Conte-me um pouco mais <p style={{ color: "red" }}>*</p>
                 </label>
                 <textarea id="idea" required {...register("idea")} />
               </div>

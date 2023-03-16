@@ -34,7 +34,7 @@ export default function Clients() {
         <div>
           <h1>
             O que estão dizendo <br />
-            sobre a <u>Casa4u</u>?
+            sobre a <b className="text-[#DCBE52]">CASA4U</b>?
           </h1>
           <p>
             Depoimentos de clientes que já contrataram nossos serviços.

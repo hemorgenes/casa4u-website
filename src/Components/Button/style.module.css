@@ -1,5 +1,5 @@
 .btn{
-  background-color: var(--primary);
+  background-color: #fff;
   border: var(--dark) solid 2px;
   padding: 0.8rem 1.8rem;
   font-weight: 600;
@@ -14,6 +14,7 @@
 
 .btn:hover{
   background-color: var(--secondary);
+  letter-spacing: 4px;
 }
 
 @media screen and (max-width: 767px) {
