@@ -52,8 +52,8 @@ export default function NavbarComponent() {
           <Navbar.Link color={"text"} href="#testimoni">
             Depoimentos
           </Navbar.Link>
-          <Navbar.Link color={"text"} href="/">
-            <button onClick={() => setModalIsOpen(true)}>Contato</button>
+          <Navbar.Link color={"text"} href="#contact">
+            <button>Contato</button>
           </Navbar.Link>
           <Navbar.Link
             color={"text"}
